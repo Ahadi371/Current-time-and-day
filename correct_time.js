@@ -35,21 +35,35 @@ displayer1.innerHTML = day;
 // find the current time
 
 // knowledge - 10PM 22
-function formet(today) {
-let hours = today.getHours();
-let minutes = today.getMinutes();
-let seconds = today.getSeconds();
-let ampm = hours >= 12 ? 'pm' : 'am';
+// function formet(today) {
+// let hours = today.getHours();
+// let minutes = today.getMinutes();
+// let seconds = today.getSeconds();
+// let ampm = hours >= 12 ? 'pm' : 'am';
+// hours = hours % 12;
+// hours =hours ? hours : 12;
+// hours = hours < 10 ? '0' + hours : hours;
+// minutes = minutes < 10 ? '0' + minutes : minutes;
+// seconds = seconds <10 ? '0' + seconds : seconds;
+
+// let currentTimne = hours + ":" + minutes + ":" + seconds + '' + ampm;
+
+// return currentTimne;
+
+// }
+
+function formet(today){
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds =today.getSeconds();
+  let ampm = hours >= 12 ? 'pm' :'am';
 hours = hours % 12;
-hours =hours ? hours : 12;
-hours = hours < 10 ? '0' + hours : hours;
-minutes = minutes < 10 ? '0' + minutes : minutes;
-seconds = seconds <10 ? '0' + seconds : seconds;
-
-let currentTimne = hours + ":" + minutes + ":" + seconds + '' + ampm;
-
-return currentTimne;
-
+hours = hours ? hours : 12;
+hours = hours < 10 ? '0' +hours :hours;
+minutes = minutes < 10 ? '0'+ minutes: minutes;
+seconds = seconds < 10 ? '0' + seconds : seconds;
+let currentTime = hours + ampm + ":" + minutes +  ":" + seconds + ":";
+return currentTime;
 }
 let dateTime = document.getElementById('time');
 dateTime.innerHTML = formet(new Date);
